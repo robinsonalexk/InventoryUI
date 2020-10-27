@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ItemManager/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ItemManager from './components/ItemManager'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ItemManager
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Muli, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #ffffff;
+  padding-top: 20px;
   margin-top: 60px;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 6px;
+  box-shadow: 0 6px 10px -4px 
 }
 </style>
