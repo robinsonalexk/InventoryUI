@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://localhost:44384/Items';
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

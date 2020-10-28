@@ -25,29 +25,29 @@ export default {
   },
   methods: {
     getAllItems: async function() {
-      await axios.get("https://localhost:44384/Items").then(response => (this.items = response.data));
+      await axios.get().then(response => (this.items = response.data));
     },
     searchItem: async function (itemName) {
-      await axios.get("https://localhost:44384/Items/MaxPriced/" + itemName).then(response => (this.items = [response.data]));
+      await axios.get("/MaxPriced/" + itemName).then(response => (this.items = [response.data]));
     },
     getMaxPrices: async function (){
-      await axios.get("https://localhost:44384/Items/MaxPriced").then(response => (this.items = response.data));
+      await axios.get("/MaxPriced").then(response => (this.items = response.data));
     },
     addItem: async function(item) {
-      await axios.post("https://localhost:44384/Items", item)
+      await axios.post('',item)
                   .then(response => (this.items.push(response.data.item)));
     },
     removeItem: async function(item) {
-      await axios.delete("https://localhost:44384/Items", {data: {id: item.id , itemName: item.itemName, cost: item.cost}})
+      await axios.delete('',{data: {id: item.id , itemName: item.itemName, cost: item.cost}})
             .then(() => {
                     this.items.splice(this.items.indexOf(item), 1);
                   });
     },
     editItem: async function (item) {
-      await axios.put("https://localhost:44384/Items", item)
+      await axios.put('',item)
             .then(() => {
                 let oldItemIndex = this.items.indexOf(this.items.find(i => i.id == item.id));
-                this.items[oldItemIndex] = item;
+                this.$set(this.items, oldItemIndex, item);
             });
     }
   },

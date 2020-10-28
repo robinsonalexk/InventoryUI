@@ -3,7 +3,7 @@
     <b-table-simple fixed outlined >
       <b-thead head-variant="dark">
         <b-tr>
-          <b-th><b-button variant="outline-light" v-on:click="toggleAddItem = !toggleAddItem" size="sm"><b-icon icon="plus"/> Add Item </b-button></b-th>
+          <b-th><b-button variant="outline-light" v-on:click="toggleAddItem = !toggleAddItem" id="addItemToggleButton" size="sm"><b-icon icon="plus"/> Add Item </b-button></b-th>
           <b-th>Item Name</b-th>
           <b-th>Cost</b-th>
           <b-th><b-button variant="outline-light"  v-on:click="$emit('reset-table')" size="sm"><b-icon icon="arrow-clockwise"/> Reset</b-button></b-th>
