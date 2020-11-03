@@ -30,4 +30,7 @@ export default {
   border-radius: 6px;
   box-shadow: 0 6px 10px -4px 
 }
+#validationMessage {
+  color: red;
+}
 </style>

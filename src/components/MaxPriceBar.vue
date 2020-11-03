@@ -14,6 +14,7 @@
             <b-button variant="outline-secondary" v-on:click="checkSearch" id="searchButton"><b-icon icon="search"/>Search </b-button>
           </b-input-group-append>
         </b-input-group>
+        <div id="validationMessage" v-if="!itemInputState">{{searchValidationMessage}}</div>
       </b-form-group>
     </b-col>
   </b-row>
@@ -27,7 +28,8 @@ export default {
   data () {
     return {
       itemname: null,
-      itemInputState: null
+      itemInputState: null,
+      searchValidationMessage: ""
     };
   },
   methods: {
@@ -36,9 +38,11 @@ export default {
     },
     checkSearch: function () {
       this.itemInputState = null;
+      this.searchValidationMessage = "";
       if(this.itemname == null || this.itemname == '')
       {
         this.itemInputState = false;
+        this.searchValidationMessage = "Please enter a search term";
       }
 
       if(this.itemInputState == false){
