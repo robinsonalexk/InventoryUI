@@ -77,8 +77,7 @@ export default {
         else{
           this.newName = null;
           this.newCost = null;
-          this.nameState = null;
-          this.costState = null;
+          this.resetValidationVariables();
         }
     },
     checkInput: function() {

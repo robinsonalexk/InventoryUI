@@ -27,7 +27,7 @@ export default {
       cost: null,
       nameState: null,
       costState: null,
-      costRegex: /^\d+(\.\d{1,2})?$/,
+      costRegex: /^(?![,.0]*$)(\d|[1-9]\d{1,5})(\.\d{2})?$/,
       costValidationMessage: "",
       nameValidationMessage: ""
     };
@@ -56,7 +56,7 @@ export default {
       if(this.nameState == false || this.costState == false){
         return
       }
-      console.log({itemName: this.itemname, cost: this.cost});
+
       this.$emit('add-item', {itemName: this.itemname, cost: Number.parseFloat(this.cost)});
     },
     resetValidationVariables: function() {
